@@ -202,8 +202,7 @@ Este script verifica que:
 ## 🤝 Contacto
 
 **Antonio Luis Martínez Trapote**
-- [LinkedIn](tu-linkedin) 
-- [Email](tu-email)
+- [LinkedIn](https://www.linkedin.com/in/antonio-trapote/) 
 
 ---
 
