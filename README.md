@@ -8,8 +8,10 @@
 Proyecto de Machine Learning para la competición [Pump it Up: Data Mining the Water Table](https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table) de DrivenData.
 
 **Autor:** Antonio Luis Martínez Trapote  
-**Fecha:** Mayo 2025  
+**Fecha:** Junio 2025  
 **Trabajo final del módulo de Machine Learning - UCM**
+
+> ⚠️ **NOTA IMPORTANTE**: Este repositorio contiene únicamente el código del proyecto. Los datos de la competición NO están incluidos para cumplir con las reglas de DrivenData. Consulta [DATA.md](DATA.md) para obtener instrucciones sobre cómo conseguir los datos.
 
 ## 📋 Descripción del Proyecto
 
@@ -54,12 +56,18 @@ Este proyecto aborda el desafío de predecir el estado operacional de bombas de 
 ```
 PumpItUp_project/
 ├── PumpItUp_AntonioTrapote.ipynb    # Notebook principal con todo el análisis
-├── training_values.csv              # Datos de entrenamiento (features)
-├── training_labels.csv              # Etiquetas de entrenamiento
-├── test_values.csv                  # Datos de test para predicción
-├── README.md                        # Este archivo
-├── .gitignore                       # Archivos a ignorar por Git
-└── requirements.txt                 # Dependencias del proyecto
+├── README.md                        # Documentación del proyecto
+├── DATA.md                          # Instrucciones para obtener los datos
+├── LICENSE                          # Licencia MIT (requerida por DrivenData)
+├── requirements.txt                 # Dependencias de Python
+├── setup.sh                         # Script de configuración automática
+├── test_environment.py              # Script de verificación de dependencias
+├── check_compliance.sh              # Script de verificación de cumplimiento
+├── .gitignore                       # Protección de archivos sensibles
+└── [datos]                          # Archivos CSV (no incluidos en repo)
+    ├── training_values.csv          # Datos de entrenamiento (obtener de DrivenData)
+    ├── training_labels.csv          # Etiquetas de entrenamiento (obtener de DrivenData)
+    └── test_values.csv              # Datos de test (obtener de DrivenData)
 ```
 
 ## 🚀 Cómo Ejecutar el Proyecto
@@ -71,13 +79,18 @@ PumpItUp_project/
 
 ### Instalación
 
-#### Opción 1: Configuración Automática (Recomendada)
+#### Paso 1: Obtener los Datos
+⚠️ **Primero debes obtener los datos de la competición**. Consulta [DATA.md](DATA.md) para instrucciones detalladas.
+
+#### Paso 2: Configurar el Proyecto
+
+##### Opción A: Configuración Automática (Recomendada)
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
-#### Opción 2: Configuración Manual
+##### Opción B: Configuración Manual
 
 1. **Clonar el repositorio**
 ```bash
@@ -101,18 +114,12 @@ pip install -r requirements.txt
 python test_environment.py
 ```
 
-5. **Ejecutar el notebook**
+5. **Verificar cumplimiento de reglas** (opcional)
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # En Windows: .venv\Scripts\activate
+./check_compliance.sh
 ```
 
-3. **Instalar dependencias**
-```bash
-pip install -r requirements.txt
-```
-
-4. **Ejecutar el notebook**
+6. **Ejecutar el notebook**
 ```bash
 jupyter notebook PumpItUp_AntonioTrapote.ipynb
 ```
@@ -168,9 +175,29 @@ jupyter notebook PumpItUp_AntonioTrapote.ipynb
 - **Métrica:** Accuracy
 - **Dataset:** ~60,000 registros de entrenamiento, ~15,000 de test
 
-## 📄 Licencia
+## 📄 Licencia y Cumplimiento
 
-Este proyecto es parte de un trabajo académico para el máster en Machine Learning de la UCM.
+Este proyecto está licenciado bajo la **MIT License** según se requiere por las reglas de la competición DrivenData.
+
+### 🔒 Cumplimiento de Reglas de la Competición
+
+- ✅ **Código**: Compartido públicamente bajo MIT License (permitido)
+- ✅ **Datos**: NO incluidos en el repositorio (cumple con las reglas de DrivenData)
+- ✅ **Uso**: Solo para propósitos educativos y de la competición
+
+Los datos originales deben obtenerse directamente de DrivenData. Ver [DATA.md](DATA.md) para más información.
+
+#### Verificación de Cumplimiento
+Puedes ejecutar el script de verificación para confirmar que el repositorio cumple con todas las reglas:
+```bash
+./check_compliance.sh
+```
+
+Este script verifica que:
+- No hay archivos de datos rastreados por git
+- Los archivos CSV están protegidos en .gitignore
+- Existe la licencia MIT requerida
+- Se proporcionan instrucciones para obtener los datos
 
 ## 🤝 Contacto
 

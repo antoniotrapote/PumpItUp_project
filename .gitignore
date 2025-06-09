@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Competition Data Files - NOT to be shared publicly per DrivenData rules
+*.csv
+data/
+raw_data/
+
 # C extensions
 *.so
 

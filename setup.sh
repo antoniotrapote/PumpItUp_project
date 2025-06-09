@@ -6,6 +6,35 @@
 echo "🚀 Setting up PumpItUp Machine Learning Project..."
 echo "=================================================="
 
+# Check for required data files
+echo "🔍 Checking for competition data files..."
+required_files=("training_values.csv" "training_labels.csv" "test_values.csv")
+missing_files=()
+
+for file in "${required_files[@]}"; do
+    if [ ! -f "$file" ]; then
+        missing_files+=("$file")
+    fi
+done
+
+if [ ${#missing_files[@]} -ne 0 ]; then
+    echo "❌ Missing required data files:"
+    for file in "${missing_files[@]}"; do
+        echo "   - $file"
+    done
+    echo ""
+    echo "📋 Please obtain the competition data first:"
+    echo "   1. Visit: https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/"
+    echo "   2. Register for the competition (free)"
+    echo "   3. Download the data files"
+    echo "   4. Place them in this directory"
+    echo ""
+    echo "See DATA.md for detailed instructions."
+    exit 1
+fi
+
+echo "✅ All required data files found!"
+
 # Check if Python is installed
 if ! command -v python3 &> /dev/null; then
     echo "❌ Python 3 is not installed. Please install Python 3.8+ first."
